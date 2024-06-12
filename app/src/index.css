@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-primary text-secondary font-jose;
+}
+* {
+  @apply box-border m-0 p-0;
+}
