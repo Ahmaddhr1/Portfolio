@@ -1,10 +1,33 @@
+@import "@flaticon/flaticon-uicons/css/all/all";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  @apply bg-primary text-secondary font-jose;
+  @apply bg-primary text-white font-jose;
 }
 * {
-  @apply box-border m-0 p-0;
+  @apply box-border m-0 p-0 outline-none;
+}
+
+.padding {
+  @apply md:px-10 px-5 md:py-5 py-5
+}
+
+.nav {
+  @apply flex items-center justify-between h-[75px];
+}
+
+.h-cover {
+  @apply  min-h-[calc(100vh-70px)] mt-[70px]
+}
+
+.gradientpurpletext {
+  background: linear-gradient(to right, #7245b2, #e1e0e4, #9f7aea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+.gradientpurple {
+  background: linear-gradient(to right, #7245b2, #e1e0e4, #9f7aea);
 }

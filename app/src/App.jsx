@@ -1,5 +1,13 @@
+import Navbar from "./components/Navbar";
+import Home from "./sections/Home";
+
 function App() {
-  return <div className="text-2xl">Whereas</div>;
+  return (
+    <>
+      <Navbar />
+      <Home />
+    </>
+  );
 }
 
 export default App;
