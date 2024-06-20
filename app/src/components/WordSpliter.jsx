@@ -17,13 +17,11 @@ const HeadingParent = {
 const headingVariants = {
   initial: {
     y: 70,
-    rotate: 90,
-    opacity:0
+    opacity: 0,
   },
   animate: {
     y: 0,
-    rotate: 0,
-    opacity:1,
+    opacity: 1,
     transition: {
       duration: 0.3,
       type: "zoom",
@@ -46,21 +44,18 @@ const Spliter = ({ text, styles, delay = 0 }) => {
       animate={isAnimated ? "animate" : "initial"} // Control animation based on state
       className={styles}
     >
-      {text.split("").map((char, i) =>
-        char !== " " ? (
-          <motion.span
-            key={i}
-            variants={headingVariants}
-            style={{
-              display: "inline-block", // Ensure inline-block behavior
-            }}
-          >
-            {char}
-          </motion.span>
-        ) : (
-          <span key={i}>&nbsp;</span>
-        )
-      )}
+      {text.split(" ").map((char, i) => (
+        <motion.span
+          key={i}
+          variants={headingVariants}
+          style={{
+            display: "inline-block",
+            marginRight:"4px", // Ensure inline-block behavior
+          }}
+        >
+          {char}
+        </motion.span>
+      ))}
     </motion.div>
   );
 };

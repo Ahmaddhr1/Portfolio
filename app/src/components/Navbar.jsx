@@ -86,9 +86,28 @@ const Navbar = () => {
       },
     },
   };
+  const navVariants = {
+    initial: {
+      y:-100,
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      y:0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
 
   return (
-    <nav className="nav padding font-outfit fixed w-full top-0 z-40">
+    <motion.nav
+      className="nav padding font-outfit fixed w-full top-0 z-40"
+      variants={navVariants}
+      initial="initial"
+      animate="animate"
+    >
       <div className=" w-14">
         <img src={Logo} alt="logo" className="w-full" />
       </div>
@@ -170,7 +189,7 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 };
 

@@ -1,7 +1,9 @@
 import React from "react";
 import Button from "../components/Button";
 import Button2 from "../components/Button2";
-import { animate, motion } from "framer-motion";
+import { animate, delay, motion } from "framer-motion";
+import Spliter from "../components/Spliter";
+import WordSpliter from "../components/WordSpliter";
 
 const Home = () => {
   const heading = "A Full Stack Web";
@@ -19,43 +21,17 @@ const Home = () => {
       y: 0,
       opacity: 1,
       transition: {
+        delay:0.3,
         duration: 0.7,
         type: "spring",
       },
     },
   };
-
-  const HeadingParent = {
-    initial: {
-      
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-    animate: {
-      
-      transition: {
-        delayChildren: 0.8,
-        staggerChildren: 0.09,
-      },
-    },
-  };
-  const headingVariants = {
-    initial: {
-      opacity: 0,
-    },
-    animate: {
-      opacity: 1,
-      transition: {
-        duration: 0.7,
-        type: "spring",
-      },
-    },
-  };
+ 
 
   return (
     <div className="relative h-cover w-full padding flex items-center justify-center text-center">
-      <div className="flex flex-col  items-center justify-center text-center gap-3 w-[500px] font-jose">
+      <div className="flex flex-col  items-center justify-center text-center gap-3 w-[510px] font-jose">
         <motion.h3
           variants={subheadingVariants}
           initial="initial"
@@ -64,28 +40,12 @@ const Home = () => {
         >
           {subheading}
         </motion.h3>
-        <motion.div
-          variants={HeadingParent}
-          initial="initial"
-          animate="animate"
-          className="md:text-6xl text-5xl font-bold h-fit"
-        >
-          {letters.map((char, i) =>
-            char !== " " ? (
-              <motion.span key={i} variants={headingVariants}>
-                {char}
-              </motion.span>
-            ) : (
-              <span key={i}>&nbsp;</span>
-            )
-          )}
-          <span className="gradientpurpletext">
-            <br />
-            {headingSpan}
-          </span>
-        </motion.div>
-
-        <p className="text-gray-300">{text}</p>
+        <div className="md:text-6xl text-[40px] font-bold h-fit overflow-hidden">
+          <Spliter text={heading} />
+          <Spliter text={headingSpan} styles="text-secondary md:text-6xl text-[40px] font-bold h-fit flex items-center justify-center overflow-hidden" delay={0.9} />
+        </div>
+        
+        <WordSpliter text={text} delay={1.3} styles={"text-gray-300"} />
         <div className="flex gap-3 ">
           <Button text={"Download CV"} icon={"fi fi-rr-download"} />
           <Button2
