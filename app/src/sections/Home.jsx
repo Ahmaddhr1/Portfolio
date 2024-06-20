@@ -21,13 +21,12 @@ const Home = () => {
       y: 0,
       opacity: 1,
       transition: {
-        delay:0.3,
+        delay: 0.3,
         duration: 0.7,
         type: "spring",
       },
     },
   };
- 
 
   return (
     <div className="relative h-cover w-full padding flex items-center justify-center text-center">
@@ -41,10 +40,10 @@ const Home = () => {
           {subheading}
         </motion.h3>
         <div className="md:text-6xl text-[40px] font-bold h-fit overflow-hidden">
-          <Spliter text={heading} />
-          <Spliter text={headingSpan} styles="text-secondary md:text-6xl text-[40px] font-bold h-fit flex items-center justify-center overflow-hidden" delay={0.9} />
+          <Spliter text={heading} styles="h-[50px] md:h-fit" />
+          <Spliter text={headingSpan} styles="text-secondary" delay={0.9} />
         </div>
-        
+
         <WordSpliter text={text} delay={1.3} styles={"text-gray-300"} />
         <div className="flex gap-3 ">
           <Button text={"Download CV"} icon={"fi fi-rr-download"} />

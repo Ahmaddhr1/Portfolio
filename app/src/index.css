@@ -19,7 +19,7 @@ body {
 }
 
 .h-cover {
-  @apply  min-h-[calc(100vh-70px)] mt-[70px]
+  @apply  min-h-[calc(100vh-70px)] mt-[70px] 
 }
 
 .gradientpurpletext {
