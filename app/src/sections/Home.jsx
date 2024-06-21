@@ -4,6 +4,7 @@ import Button2 from "../components/Button2";
 import { animate, delay, motion } from "framer-motion";
 import Spliter from "../components/Spliter";
 import WordSpliter from "../components/WordSpliter";
+import Jssvg from "../svg/javascript";
 
 const Home = () => {
   const heading = "A Full Stack Web";
@@ -39,12 +40,17 @@ const Home = () => {
         >
           {subheading}
         </motion.h3>
-        <div className="md:text-6xl text-[40px] font-bold h-fit overflow-hidden">
+        <div className="md:text-6xl text-[40px] font-bold h-fit overflow-hidden ">
           <Spliter text={heading} styles="h-[50px] md:h-fit" />
-          <Spliter text={headingSpan} styles="text-secondary" delay={0.9} />
         </div>
-
-        <WordSpliter text={text} delay={1.3} styles={"text-gray-300"} />
+        <Spliter
+          text={headingSpan}
+          styles="text-secondary md:text-6xl text-[40px] font-bold h-fit overflow-hidden mt-[-20px] md:mt-0"
+          delay={0.9}
+        />
+        <p className="h-fit overflow-hidden">
+          <WordSpliter text={text} delay={1.3} styles={"text-gray-300"} />
+        </p>
         <div className="flex gap-3 ">
           <Button text={"Download CV"} icon={"fi fi-rr-download"} />
           <Button2

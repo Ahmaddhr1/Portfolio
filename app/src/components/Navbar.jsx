@@ -115,8 +115,9 @@ const Navbar = () => {
         {tabs.map((tab, i) => (
           <li
             key={i}
-            className="relative rounded-full px-2 py-1"
+            className={`relative rounded-full px-3 py-[5px] duration-200 cursor-pointer ${i === activeTab? "hover:text-gray-300 ":"hover:text-secondary"}`}
             onClick={() => setActiveTab(i)}
+            
           >
             {activeTab === i && (
               <motion.span
@@ -180,6 +181,7 @@ const Navbar = () => {
                     key={i}
                     variants={linkVariants}
                     className="text-5xl uppercase"
+                    onClick={() => setIsNavOpen(false)}
                   >
                     <a href={tab.path}>{tab.title}</a>
                   </motion.li>

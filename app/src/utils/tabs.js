@@ -4,16 +4,12 @@ export const tabs = [
     path: "#",
   },
   {
-    title: "Services",
-    path: "#services",
-  },
-  {
     title: "Skills",
     path: "#skills",
   },
   {
-    title: "Works",
-    path: "#works",
+    title: "Projects",
+    path: "#projects",
   },
   {
     title: "Contact",

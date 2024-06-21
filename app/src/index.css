@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-primary text-white font-jose;
+  @apply bg-primary text-white font-jose overflow-x-hidden;
 }
 * {
   @apply box-border m-0 p-0 outline-none;
