@@ -3,8 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply overflow-x-hidden scroll-smooth scroll-my-36
+}
 body {
-  @apply bg-primary text-white font-jose overflow-x-hidden;
+  @apply bg-primary text-white font-jose ;
 }
 * {
   @apply box-border m-0 p-0 outline-none;

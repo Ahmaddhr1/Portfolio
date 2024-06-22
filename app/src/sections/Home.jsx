@@ -1,11 +1,10 @@
 import React from "react";
 import Button from "../components/Button";
 import Button2 from "../components/Button2";
-import { animate, delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Spliter from "../components/Spliter";
 import WordSpliter from "../components/WordSpliter";
-import Jssvg from "../svg/javascript";
-
+import { headingVariants } from "../utils/animations";
 const Home = () => {
   const heading = "A Full Stack Web";
   const subheading = "I'm Ahmad Daher!";
@@ -13,33 +12,15 @@ const Home = () => {
     "Transforming ideas into interactive digital masterpieces. Crafting web experiences with a touch of magic.";
   const headingSpan = "Developer";
   const letters = heading.split("");
-  const subheadingVariants = {
-    initial: {
-      y: -150,
-      opacity: 0,
-    },
-    animate: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        delay: 0.3,
-        duration: 0.7,
-        type: "spring",
-      },
-    },
-  };
-
+ 
   return (
     <div className="relative h-cover w-full padding flex items-center justify-center text-center">
       <div className="flex flex-col  items-center justify-center text-center gap-3 w-[510px] font-jose">
-        <motion.h3
-          variants={subheadingVariants}
-          initial="initial"
-          animate="animate"
-          className="text-xl text-gray-300 font-medium"
-        >
-          {subheading}
-        </motion.h3>
+        <motion.div className="text-xl text-gray-300 font-medium h-[50px] flex items-center justify-center overflow-hidden">
+          <motion.p variants={headingVariants} initial="initial" animate="animate">
+            {subheading}
+          </motion.p>
+        </motion.div>
         <div className="md:text-6xl text-[40px] font-bold h-fit overflow-hidden ">
           <Spliter text={heading} styles="h-[50px] md:h-fit" />
         </div>

@@ -1,24 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-const fadeinleft = {
-  initial: {
-    x: -100,
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      delay:3,
-      duration: 2,
-      type: "spring",
-    },
-  },
-};
+import { fadeInLeft } from "../utils/animations";
+
 const Button = ({ text, icon }) => {
   return (
     <motion.a
-      variants={fadeinleft}
+      variants={fadeInLeft}
       initial="initial"
       animate="animate"
       href="/Ahmad Daher CV.docx"

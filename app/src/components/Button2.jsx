@@ -1,24 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-const fadeinleft = {
-  initial: {
-    x: 100,
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      delay:3,
-      duration: 2,
-      type: "spring",
-    },
-  },
-};
+import { fadeInRight } from "../utils/animations";
 const Button2 = ({ text, icon, section }) => {
   return (
     <motion.a
-      variants={fadeinleft}
+      variants={fadeInRight}
       initial="initial"
       animate="animate"
       href={"#" + section}

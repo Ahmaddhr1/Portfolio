@@ -103,7 +103,7 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className="nav padding font-outfit fixed w-full top-0 z-40"
+      className="nav padding font-outfit fixed w-full top-0 z-40 bg-blend-darken backdrop-blur-2xl"
       variants={navVariants}
       initial="initial"
       animate="animate"
@@ -113,8 +113,9 @@ const Navbar = () => {
       </div>
       <ul className="md:flex gap-3 hidden">
         {tabs.map((tab, i) => (
-          <li
+          <a
             key={i}
+            href={tab.path}
             className={`relative rounded-full px-3 py-[5px] duration-200 cursor-pointer ${i === activeTab? "hover:text-gray-300 ":"hover:text-secondary"}`}
             onClick={() => setActiveTab(i)}
             
@@ -122,17 +123,17 @@ const Navbar = () => {
             {activeTab === i && (
               <motion.span
                 layoutId="tabs"
-                className="absolute inset-0 bg-secondary"
+                className="absolute inset-0 bg-secondary w-full h-full"
                 style={{ borderRadius: 9999 }}
               ></motion.span>
             )}
-            <a
-              href={tab.path}
+            <p
+              
               className="relative flex items-center justify-center z-10"
             >
               {tab.title}
-            </a>
-          </li>
+            </p>
+          </a>
         ))}
       </ul>
       <i

@@ -16,7 +16,7 @@ const HeadingParent = {
 
 const headingVariants = {
   initial: {
-    y: 70,
+    y: 130,
     opacity:0
   },
   animate: {

@@ -12,6 +12,10 @@ export const tabs = [
     path: "#projects",
   },
   {
+    title: "Education",
+    path: "#education",
+  },
+  {
     title: "Contact",
     path: "#contact",
   }
