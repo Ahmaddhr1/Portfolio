@@ -1,4 +1,4 @@
-export const fadeInLeft = {
+export const fadeInLeftDelayed = {
   initial: {
     x: -100,
     opacity: 0,
@@ -15,7 +15,7 @@ export const fadeInLeft = {
 };
 
 
-export const fadeInRight = {
+export const fadeInRightDelayed = {
     initial: {
       x: 100,
       opacity: 0,
@@ -43,6 +43,47 @@ export const fadeInRight = {
         delay: 0.3,
         duration: 1,
         type: "spring",
+      },
+    },
+  };
+
+  export const fadeInLeft = {
+    initial: {
+      x: -100,
+      opacity: 0,
+    },
+    animate: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 2,
+        type: "spring",
+      },
+    },
+  };
+  export const fadeInRight = {
+    initial: {
+      x: 100,
+      opacity: 0,
+    },
+    animate: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 2,
+        type: "spring",
+      },
+    },
+  };
+
+  export const parentVariant = {
+    initial: {
+      staggerChildren: 0.2,
+    },
+    animate: {
+      transition: {
+        delayChildren:0.5,
+        staggerChildren: 0.2,
       },
     },
   };

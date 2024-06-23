@@ -14,7 +14,7 @@ const Home = () => {
   const letters = heading.split("");
  
   return (
-    <div className="relative h-cover w-full padding flex items-center justify-center text-center">
+    <div className="relative h-cover w-full padding flex items-center justify-center text-center overflow-x-hidden">
       <div className="flex flex-col  items-center justify-center text-center gap-3 w-[510px] font-jose">
         <motion.div className="text-xl text-gray-300 font-medium h-[50px] flex items-center justify-center overflow-hidden">
           <motion.p variants={headingVariants} initial="initial" animate="animate">

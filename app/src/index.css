@@ -4,13 +4,13 @@
 @tailwind utilities;
 
 html {
-  @apply overflow-x-hidden scroll-smooth scroll-my-36
+  @apply overflow-x-hidden scroll-smooth
 }
 body {
-  @apply bg-primary text-white font-jose ;
+  @apply bg-primary text-white font-jose  ;
 }
 * {
-  @apply box-border m-0 p-0 outline-none;
+  @apply box-border m-0 p-0 outline-none ;
 }
 
 .padding {
@@ -18,19 +18,16 @@ body {
 }
 
 .nav {
-  @apply flex items-center justify-between h-[75px];
+  @apply flex items-center justify-between h-fit;
 }
 
 .h-cover {
   @apply  min-h-[calc(100vh-70px)] mt-[70px] 
 }
-
-.gradientpurpletext {
-  background: linear-gradient(to right, #7245b2, #e1e0e4, #9f7aea);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
+.btn-primary {
+  @apply cursor-pointer bg-secondary text-white font-outfit px-4 py-2 flex gap-2 rounded-md overflow-hidden;
 }
-.gradientpurple {
-  background: linear-gradient(to right, #7245b2, #e1e0e4, #9f7aea);
+.btn-secondary {
+  @apply cursor-pointer bg-transparent text-white font-outfit px-4 py-2 flex gap-2 rounded-md overflow-hidden border border-secondary;
 }
+

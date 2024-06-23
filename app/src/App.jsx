@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Home from "./sections/Home";
+import Projects from "./sections/Projects";
 import Skills from "./sections/Skills";
 
 function App() {
@@ -11,6 +12,9 @@ function App() {
       </div>
       <div id="skills">
         <Skills />
+      </div>
+      <div id="projects">
+        <Projects />
       </div>
     </>
   );

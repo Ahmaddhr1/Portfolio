@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { fadeInRight } from "../utils/animations";
+import { fadeInRightDelayed } from "../utils/animations";
 const Button2 = ({ text, icon, section }) => {
   return (
     <motion.a
-      variants={fadeInRight}
+      variants={fadeInRightDelayed}
       initial="initial"
       animate="animate"
       href={"#" + section}

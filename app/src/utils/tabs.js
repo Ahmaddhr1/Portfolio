@@ -21,4 +21,13 @@ export const tabs = [
   }
 ];
 
+export const skillsTabs=[
+  {
+    title: "Tech Stack",
+  },
+  {
+    title: "Tools",
+  },
+]
+
 

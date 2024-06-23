@@ -103,7 +103,7 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className="nav padding font-outfit fixed w-full top-0 z-40 bg-blend-darken backdrop-blur-2xl"
+      className=" nav padding font-outfit fixed w-full top-0 z-40 bg-blend-darken backdrop-blur-2xl"
       variants={navVariants}
       initial="initial"
       animate="animate"
