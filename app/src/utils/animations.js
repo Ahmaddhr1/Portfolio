@@ -83,7 +83,7 @@ export const fadeInRightDelayed = {
     animate: {
       transition: {
         delayChildren:0.5,
-        staggerChildren: 0.2,
+        staggerChildren: 0.3,
       },
     },
   };

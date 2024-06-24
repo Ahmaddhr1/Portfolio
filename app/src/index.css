@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 html {
-  @apply overflow-x-hidden scroll-smooth
+  @apply overflow-x-hidden scroll-smooth scroll-my-96
 }
 body {
   @apply bg-primary text-white font-jose  ;
@@ -25,9 +25,9 @@ body {
   @apply  min-h-[calc(100vh-70px)] mt-[70px] 
 }
 .btn-primary {
-  @apply cursor-pointer bg-secondary text-white font-outfit px-4 py-2 flex gap-2 rounded-md overflow-hidden;
+  @apply cursor-pointer bg-secondary text-white font-outfit px-4 py-2 flex gap-2 rounded-md overflow-hidden hover:opacity-75 duration-300;
 }
 .btn-secondary {
-  @apply cursor-pointer bg-transparent text-white font-outfit px-4 py-2 flex gap-2 rounded-md overflow-hidden border border-secondary;
+  @apply cursor-pointer bg-transparent text-white font-outfit px-4 py-2 flex gap-2 rounded-md overflow-hidden border border-secondary hover:opacity-75 duration-300;
 }
 

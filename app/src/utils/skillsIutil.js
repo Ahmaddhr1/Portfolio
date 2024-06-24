@@ -49,12 +49,20 @@ export const tools = [
     icon: "devicon-git-plain colored",
   },
   {
+    name: "Github",
+    icon: "devicon-github-plain ",
+  },
+  {
     name: "Firebase",
     icon: "devicon-firebase-plain colored",
   },
   {
     name: "Vercel",
-    icon: "devicon-vercel-original colored", 
+    icon: "devicon-vercel-original ", 
+  },
+  {
+    name: "Postman",
+    icon: "devicon-postman-plain colored ", 
   },
   {
     name: "Vite",

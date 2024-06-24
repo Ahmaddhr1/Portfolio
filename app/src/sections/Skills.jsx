@@ -10,15 +10,15 @@ import img from "../imgs/img1.jpeg";
 const Skills = () => {
   const [activeTab, setActiveTab] = useState(0);
   return (
-    <div className="w-full min-h-[70vh] padding flex flex-col md:flex-row gap-6 font-outfit mb-20 overflow-x-hidden">
-      <div className="flex flex-wrap flex-col gap-4 flex-1 ">
+    <div className="w-full h-[100vh] padding flex justify-center items-center flex-col md:flex-row md:gap-6 gap-9 font-outfit mb-20 overflow-x-hidden">
+      <div className="flex flex-wrap flex-col gap-4 md:flex-1 justify-center">
         <motion.div className="flex flex-col gap-3 justify-center md:w-[500px] w-full h-fit ">
           <motion.h1
             variants={fadeInLeft}
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true }}
-            className="text-4xl font-bold font-jose"
+            viewport={{ once: true, amount: 0.3 }}
+            className="text-4xl font-bold font-jose uppercase text-left w-full"
           >
             Skills
           </motion.h1>
@@ -26,7 +26,7 @@ const Skills = () => {
             variants={fadeInRight}
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.125 }}
             className="text-gray-300 "
           >
             As a passionate web developer, I am proficient in a diverse range of
@@ -38,8 +38,8 @@ const Skills = () => {
           variants={fadeInLeft}
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true }}
-          className="flex gap-3 w-fit font-outfit bg-darkpurple rounded-tl-lg rounded-tr-lg"
+          viewport={{ once: true, amount: 0.125 }}
+          className="flex gap-3 w-fit font-outfit  bg-darkpurple rounded-tl-lg rounded-tr-lg"
         >
           {skillsTabs.map((tab, i) => (
             <motion.div
@@ -58,20 +58,22 @@ const Skills = () => {
             </motion.div>
           ))}
         </motion.div>
-        {activeTab === 0 ? (
-          <TechTools key="techStack" arr={techStack} />
-        ) : (
-          <TechTools key="tools" arr={tools} />
-        )}
+        <div className="h-fit">
+          {activeTab === 0 ? (
+            <TechTools key="techStack" arr={techStack} />
+          ) : (
+            <TechTools key="tools" arr={tools} />
+          )}
+        </div>
       </div>
-      <motion.div className="rounded-xl overflow-hidden md:w-[50%] relative">
+      <motion.div className="rounded-xl overflow-hidden md:w-[50%] h-fit w-full relative">
         <motion.img
           src={img}
           alt="image"
           variants={fadeInRight}
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.125 }}
           className="w-full md:w-full md:h-[400px] h-[200px] object-cover"
         />
         <motion.div

@@ -24,7 +24,7 @@ const TechTools = ({ arr }) => {
     
   return (
     <motion.div 
-      className="flex gap-4 items-center flex-wrap h-fit overflow-hidden "
+      className="flex gap-4 items-center flex-wrap overflow-hidden "
       variants={parentVariant}
       initial="initial"
       whileInView="animate"
@@ -36,8 +36,8 @@ const TechTools = ({ arr }) => {
           key={i}
           variants={childVariant}
         >
-          <motion.i className={tech.icon + " text-[50px]"}></motion.i>
-          <motion.p>{tech.name}</motion.p>
+          <motion.i className={tech.icon + " md:text-[50px] text-[35px]"}></motion.i>
+          <motion.p className="md:text-md text-sm">{tech.name}</motion.p>
         </motion.div>
       ))}
     </motion.div>

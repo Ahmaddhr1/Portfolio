@@ -11,7 +11,6 @@ const Home = () => {
   const text =
     "Transforming ideas into interactive digital masterpieces. Crafting web experiences with a touch of magic.";
   const headingSpan = "Developer";
-  const letters = heading.split("");
  
   return (
     <div className="relative h-cover w-full padding flex items-center justify-center text-center overflow-x-hidden">

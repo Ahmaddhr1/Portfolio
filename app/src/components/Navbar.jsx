@@ -1,11 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "../imgs/logo.png";
 import { tabs } from "../utils/tabs.js";
-import { AnimatePresence, animate, motion } from "framer-motion";
+import { AnimatePresence, motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 
 const Navbar = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const { scrollY } = useScroll();
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrollingDown, setIsScrollingDown] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest > lastScrollY) {
+      setIsScrollingDown(true);
+    } else {
+      setIsScrollingDown(false);
+    }
+    setLastScrollY(latest);
+  });
+
+  const navVariants = {
+    hidden: { y: -100, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
+
   const menuVariants = {
     initial: {
       scaleY: 0,
@@ -53,6 +71,7 @@ const Navbar = () => {
       },
     },
   };
+
   const xVariants = {
     initial: {
       rotate: "0deg",
@@ -70,6 +89,7 @@ const Navbar = () => {
       },
     },
   };
+
   const logoVariant = {
     initial: {
       y: "-100px",
@@ -86,29 +106,15 @@ const Navbar = () => {
       },
     },
   };
-  const navVariants = {
-    initial: {
-      y:-100,
-      opacity: 0,
-    },
-    animate: {
-      opacity: 1,
-      y:0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
-  };
 
   return (
     <motion.nav
-      className=" nav padding font-outfit fixed w-full top-0 z-40 bg-blend-darken backdrop-blur-2xl"
+      className="nav padding font-outfit fixed w-full top-0 z-40 bg-blend-darken backdrop-blur-2xl"
       variants={navVariants}
-      initial="initial"
-      animate="animate"
+      initial="visible"
+      animate={isScrollingDown ? "hidden" : "visible"}
     >
-      <div className=" w-14">
+      <div className="w-14">
         <img src={Logo} alt="logo" className="w-full" />
       </div>
       <ul className="md:flex gap-3 hidden">
@@ -116,9 +122,8 @@ const Navbar = () => {
           <a
             key={i}
             href={tab.path}
-            className={`relative rounded-full px-3 py-[5px] duration-200 cursor-pointer ${i === activeTab? "hover:text-gray-300 ":"hover:text-secondary"}`}
+            className={`relative rounded-full px-3 py-[5px] duration-200 cursor-pointer ${i === activeTab ? "hover:text-gray-300 " : "hover:text-secondary"}`}
             onClick={() => setActiveTab(i)}
-            
           >
             {activeTab === i && (
               <motion.span
@@ -127,17 +132,14 @@ const Navbar = () => {
                 style={{ borderRadius: 9999 }}
               ></motion.span>
             )}
-            <p
-              
-              className="relative flex items-center justify-center z-10"
-            >
+            <p className="relative flex items-center justify-center z-10">
               {tab.title}
             </p>
           </a>
         ))}
       </ul>
       <i
-        className="fi fi-rr-bars-staggered md:hidden flex text-3xl "
+        className="fi fi-rr-bars-staggered md:hidden flex text-3xl"
         onClick={() => setIsNavOpen(!isNavOpen)}
       ></i>
       <AnimatePresence>
@@ -149,22 +151,22 @@ const Navbar = () => {
             exit="exit"
             className="fixed left-0 top-0 w-full h-screen origin-top bg-secondary z-50 pt-8 pb-3 px-10"
           >
-            <div className="flex flex-wrap h-fit justify-between ">
+            <div className="flex flex-wrap h-fit justify-between">
               <motion.div
                 className="w-14 origin-top"
                 variants={logoVariant}
                 initial="initial"
                 animate="animate"
               >
-                <img src={Logo} alt="logo" className=" w-full " />
+                <img src={Logo} alt="logo" className="w-full" />
               </motion.div>
               <motion.h2
                 variants={xVariants}
                 initial="initial"
                 animate="animate"
                 exit="initial"
-                className="text-xl flex items-center justify-center font-semibold w-[50px] h-[50px] border  rounded-full"
-                onClick={(p) => setIsNavOpen(!p)}
+                className="text-xl flex items-center justify-center font-semibold w-[50px] h-[50px] border rounded-full"
+                onClick={() => setIsNavOpen(false)}
               >
                 <p>X</p>
               </motion.h2>
@@ -177,9 +179,8 @@ const Navbar = () => {
               className="flex font-jose flex-col gap-5 justify-center items-center h-[80vh]"
             >
               {tabs.map((tab, i) => (
-                <div className="overflow-hidden">
+                <div key={i} className="overflow-hidden">
                   <motion.li
-                    key={i}
                     variants={linkVariants}
                     className="text-5xl uppercase"
                     onClick={() => setIsNavOpen(false)}

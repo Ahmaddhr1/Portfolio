@@ -3,16 +3,24 @@ import ProjectCard from "../components/ProjectCard";
 import noteImg from "../imgs/noteapp.png";
 import youtubeImg from "../imgs/youtubeclone.png";
 import { motion } from "framer-motion";
-import { parentVariant } from "../utils/animations";
+import { fadeInLeft, parentVariant } from "../utils/animations";
 const Projects = () => {
   return (
-    <div className="max-h-fit padding flex flex-wrap w-full flex-col gap-4">
-      <h1 className="text-4xl font-bold">Projects</h1>
+    <div className="min-h-screen padding flex items-center justify-center flex-wrap w-full flex-col gap-4 overflow-x-hidden">
+      <motion.h1
+        variants={fadeInLeft}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.3 }}
+        className="text-4xl font-bold uppercase w-full text-left"
+      >
+        Projects
+      </motion.h1>
       <motion.div
         variants={parentVariant}
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.125 }}
         className="flex flex-wrap w-full gap-3 flex-col md:flex-row"
       >
         <ProjectCard
@@ -31,14 +39,22 @@ const Projects = () => {
           demoHref={"https://noteit-ahmad.vercel.app/"}
           githubHref={"https://github.com/Ahmaddhr1/MERN-Note-Application"}
         />
-        <ProjectCard
-          img={youtubeImg}
-          title={"Youtube Clone"}
-          heading={"React youtube clone using youtube-v3 from Rapid API"}
-          languages={["React", "TailwindCSS"]}
-          demoHref={"https://yt-ahmad.vercel.app/"}
-          githubHref={"https://github.com/Ahmaddhr1/Youtube_Clone"}
-        />
+        <motion.div
+          variants={parentVariant}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.125 }}
+          className="flex flex-wrap w-full gap-3 flex-col md:flex-row"
+        >
+          <ProjectCard
+            img={youtubeImg}
+            title={"Youtube Clone"}
+            heading={"React youtube clone using youtube-v3 from Rapid API"}
+            languages={["React", "TailwindCSS"]}
+            demoHref={"https://yt-ahmad.vercel.app/"}
+            githubHref={"https://github.com/Ahmaddhr1/Youtube_Clone"}
+          />
+        </motion.div>
       </motion.div>
     </div>
   );
