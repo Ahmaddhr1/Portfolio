@@ -32,7 +32,7 @@ const Contact = () => {
         </div>
         <a
           className="btn-primary justify-center"
-          href="/Ahmad Daher CV.docx"
+          href="/Ahmad Daher CV.pdf"
           donwnload="true"
         >
           <i className="fi fi-rr-download flex items-center "></i>
