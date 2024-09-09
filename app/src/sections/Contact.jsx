@@ -33,7 +33,7 @@ const Contact = () => {
         <a
           className="btn-primary justify-center"
           href="/Ahmad Daher CV.pdf"
-          donwnload="true"
+          download
         >
           <i className="fi fi-rr-download flex items-center "></i>
           <p>Download CV</p>
