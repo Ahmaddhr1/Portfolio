@@ -11,7 +11,7 @@ const Navbar = () => {
   const [isScrollingDown, setIsScrollingDown] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > lastScrollY+24) {
+    if (latest +24 > lastScrollY) {
       setIsScrollingDown(true);
     } else {
       setIsScrollingDown(false);
