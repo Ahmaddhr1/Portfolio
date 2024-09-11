@@ -35,8 +35,8 @@ const Contact = () => {
           href="/Ahmad Daher CV.pdf"
           download
         >
-          <i className="fi fi-rr-download flex items-center "></i>
-          <p>Download CV</p>
+          <i className="fi fi-rr-eye flex items-center "></i>
+          <p>View CV</p>
         </a>
       </motion.div>
     </div>
