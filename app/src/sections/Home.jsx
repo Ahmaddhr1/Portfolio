@@ -32,7 +32,7 @@ const Home = () => {
           <WordSpliter text={text} delay={1.3} styles={"text-gray-300"} />
         </p>
         <div className="flex gap-3 ">
-          <Button text={"Download CV"} icon={"fi fi-rr-download"} />
+          <Button text={"View CV"} icon={"fi fi-rr-eye"} />
           <Button2
             text={"Contact Me"}
             icon={"fi fi-rr-comment-dots"}
