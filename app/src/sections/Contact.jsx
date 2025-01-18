@@ -39,7 +39,7 @@ const Contact = () => {
           download
         >
           <i className="fi fi-rr-eye flex items-center "></i>
-          <p>View CV</p>
+          <p>Download CV</p>
         </a>
       </motion.div>
     </div>
