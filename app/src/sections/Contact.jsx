@@ -20,21 +20,20 @@ const Contact = () => {
           </p>
         </div>
         <div className="flex gap-4 flex-wrap items-start justify-start">
-          {socialMediaLinks.map((link, i) => (
-        <div key={i}>
-            <a href={link.url} target="_blank">
-              <i
-                className={
-                  link.icon + " text-4xl hover:text-secondary duration-200 mr-3"
-                }
-              ></i>
-            </a>
-            <a href="mailto:ahmaddaherr004@gmail.com" target="_blank">
-          <i className="fi fi-rr-envelope text-4xl hover:text-secondary duration-200 "></i>
-        </a>
-          </div>
-          ))}
-        </div>
+  {socialMediaLinks.map((link, i) => (
+    <a key={i} href={link.url} target="_blank" rel="noopener noreferrer">
+      <i
+        className={
+          link.icon + " text-4xl hover:text-secondary duration-200 mr-3"
+        }
+      ></i>
+    </a>
+  ))}
+  <a href="mailto:ahmaddaherr004@gmail.com" target="_blank" rel="noopener noreferrer">
+    <i className="fi fi-rr-envelope text-4xl hover:text-secondary duration-200"></i>
+  </a>
+</div>
+
         <a
           className="btn-primary justify-center"
           href="/Ahmad Daher CV.pdf"
