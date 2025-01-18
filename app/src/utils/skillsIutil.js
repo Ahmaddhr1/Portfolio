@@ -4,6 +4,10 @@ export const techStack = [
     icon: "devicon-javascript-plain colored",
   },
   {
+    name: "NextJs",
+    icon: "devicon-next-plain colored",
+  },
+  {
     name: "React",
     icon: "devicon-react-original colored",
   },
