@@ -36,11 +36,6 @@ export const socialMediaLinks = [
     icon: "fi fi-brands-linkedin",
   },
   {
-    name:"Instagram",
-    url: "https://www.instagram.com/ahmaddhr_/",
-    icon: "fi fi-brands-instagram",
-  },
-  {
     name:"Whatsapp",
     url: "https://wa.me/+96176522837",
     icon: "fi fi-brands-whatsapp",
