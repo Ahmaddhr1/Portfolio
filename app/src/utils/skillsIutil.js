@@ -5,7 +5,7 @@ export const techStack = [
   },
   {
     name: "NextJs",
-    icon: "devicon-next-plain",
+    icon: "devicon-nextjs-plain",
   },
   {
     name: "React",
