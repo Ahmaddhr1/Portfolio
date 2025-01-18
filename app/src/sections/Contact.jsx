@@ -28,6 +28,9 @@ const Contact = () => {
                 }
               ></i>
             </a>
+            <a mailto:"ahmaddaherr004@gmail.com" target="_blank" >
+          <i className="fi fi-rr-envelope text-4xl hover:text-secondary duration-200 "></i>
+        </a>
           ))}
         </div>
         <a
