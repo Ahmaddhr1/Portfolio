@@ -24,7 +24,7 @@ const Contact = () => {
             <a href={link.url} target="_blank" key={i}>
               <i
                 className={
-                  link.icon + " text-4xl hover:text-secondary duration-200"
+                  link.icon + " text-4xl hover:text-secondary duration-200 mr-3"
                 }
               ></i>
             </a>
