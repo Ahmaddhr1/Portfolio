@@ -21,6 +21,7 @@ const Contact = () => {
         </div>
         <div className="flex gap-4 flex-wrap items-start justify-start">
           {socialMediaLinks.map((link, i) => (
+        <div>
             <a href={link.url} target="_blank" key={i}>
               <i
                 className={
@@ -31,6 +32,7 @@ const Contact = () => {
             <a mailto:"ahmaddaherr004@gmail.com" target="_blank" >
           <i className="fi fi-rr-envelope text-4xl hover:text-secondary duration-200 "></i>
         </a>
+          </div>
           ))}
         </div>
         <a
